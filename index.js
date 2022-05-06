@@ -1,6 +1,7 @@
 let current = 0;
 let calcMode = "none";
 let inputValue = 0;
+let needReset = true;
 
 /*
  * 計算処理
@@ -41,19 +42,17 @@ const onButton = (event) => {
     case "minus":
     case "divide":
     case "multiple":
+      needReset = false;
       current = calculate(current, calcMode, inputValue);
       calcMode = value;
       inputValue = 0;
-      break;
-
-    case "plusMinus":
-      inputValue = inputValue * -1;
       break;
 
     case "clear":
       inputValue = 0;
       current = 0;
       calcMode = "none";
+      needReset = true;
       break;
 
     case "equal":
@@ -62,9 +61,15 @@ const onButton = (event) => {
       }
       inputValue = Math.floor(current);
       calcMode = "none";
+      needReset = true;
       break;
 
     default:
+      if (needReset) {
+        inputValue = 0;
+        current = 0;
+      }
+      needReset = false;
       inputValue = inputValue * 10 + parseInt(button.value);
       break;
   }

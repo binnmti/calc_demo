@@ -68,9 +68,22 @@ button, input[type=text] {
 .containerLeft .padFrame button {
   width: 33.3%;
   height: 25%;
+  background-color: #CCCCCC;
+}
+.containerLeft .padFrame button:active {
+  background-color: #AAAAAA;
+}
+
+.containerLeft .padFrame .equalBtn {
+  width: 66.6%;
+  background-color: #FFCCCC;
 }
 
 /* 計算ボタン */
 .actionBtn {
   background-color: #CCCCFF;
+}
+
+.actionBtn:active {
+  background-color: #8888CC;
 }
