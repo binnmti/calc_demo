@@ -60,11 +60,9 @@ const onButton = (event) => {
       if (inputValue !== 0) {
         current = calculate(current, calcMode, inputValue);
       }
-      display.value = Math.floor(current);
-      current = 0;
-      inputValue = 0;
+      inputValue = Math.floor(current);
       calcMode = "none";
-      return;
+      break;
 
     default:
       inputValue = inputValue * 10 + parseInt(button.value);
