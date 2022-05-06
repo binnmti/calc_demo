@@ -57,9 +57,8 @@ const onButton = (event) => {
 
     case "equal":
       if (inputValue !== 0) {
-        current = calculate(current, calcMode, inputValue);
+        inputValue = calculate(current, calcMode, inputValue);
       }
-      inputValue = Math.floor(current);
       calcMode = "none";
       needReset = true;
       break;
@@ -74,7 +73,7 @@ const onButton = (event) => {
       break;
   }
 
-  display.value = Math.floor(inputValue);
+  display.value = inputValue;
 };
 
 /*
