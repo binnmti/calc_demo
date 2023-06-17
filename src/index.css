@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  font-size: 13px;
+}
+
+button, input[type=text] {
+  font-size: 3rem;
+  width: 100%;
+  height: 100%;
+}
+
+/* 全体枠 */
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: flex;
+}
+
+/* 左部分 */
+.containerLeft {
+  width: 75%;
+  height: 100%;
+
+  display: flex;
+  flex-flow: column;
+}
+
+/* 右部分 */
+.containerRight {
+  flex-grow: 1;
+  width: 25%;
+  height: 100%;
+
+  display: flex;
+  flex-flow: column;
+}
+
+/* 計算結果の表示部分 */
+.containerLeft #display {
+  width: 100%;
+  height: 100%;
+  background-color: #889999;
+  text-align: right;
+  border-style: none;
+  padding: 0px;
+  flex: 1;
+}
+
+
+/* (下部左)ボタン全体の枠 */
+.containerLeft .padFrame {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: silver;
+  width: 100%;
+  height: 100%;
+  flex: 4;
+}
+
+/* 番号のボタン */
+.containerLeft .padFrame button {
+  width: 33.3%;
+  height: 25%;
+  background-color: #CCCCCC;
+}
+.containerLeft .padFrame button:active {
+  background-color: #AAAAAA;
+}
+
+.containerLeft .padFrame .equalBtn {
+  width: 66.6%;
+  background-color: #FFCCCC;
+}
+
+/* 計算ボタン */
+.actionBtn {
+  background-color: #CCCCFF;
+}
+
+.actionBtn:active {
+  background-color: #8888CC;
+}
